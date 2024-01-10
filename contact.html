@@ -1,65 +1,81 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIC cafe</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">
-        <img src="images/sample_logo_k.png" alt="">
-      </a>
-      <ul>
-        <a href="index.html"><li>Home</li></a>
-        <a href="#"><li>Menu</li></a>
-        <a href="contact.html"><li>Contact</li></a>
-      </ul>
-    </nav>
-  </header>
-  <h1>CONCACT</h1>
-  <p>お問い合せ</p>
-  <section>
-    <table border="1">
-      <tboldy>
-        <tr>
-          <td>お名前</td>
-          <td>空欄</td>
-        </tr>
-        <tr>
-          <td>ご連絡先</td>
-          <td>空欄</td>
-        </tr>
-        <tr>
-          <td>お住いの地域</td>
-          <td>空欄</td>
-        </tr>
-        <tr>
-          <td>内容</td>
-          <td>空欄</td>
-        </tr>
-      </tboldy>
-    </table>
-  </section>
-  <footer>
-    <nav>
-      <ul>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIC cafe</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  </head>
+
+  <body>
+    <header>
+      <nav class="header_nav">
+        <a class="logo" href="index.html"><img src="images/sample_logo_k.png"></a>
+        <ul class="global_nav">
+          <a class="global_nav_item" href="index.html"><li>Home</li></a>
+          <a class="global_nav_item" href="#"><li>Menu</li></a>
+          <a class="global_nav_item" href="contact.html"><li>Contact</li></a>
+        </ul>
+      </nav>
+    </header>
+    <section class="section_inner">
+      <div class="section_title">
+        <h1>CONCACT</h1>
+        <p>お問い合せ</p>
+      </div>
+      <form action="#" method="POST">
+        <table>
+          <tboldy>
+            <tr>
+              <td><label for="name">お名前</label></td>
+              <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+              <td><label for="phonenumber">ご連絡先</label></td>
+              <td><input type="text" name="phonenumber" id="phonenumber"></td>
+            </tr>
+            <tr>
+              <td><label for="region">お住いの地域</label></td>
+              <td>
+                <select name="region" id="region">
+                  <option value="">選択してください</option>
+                  <option value="1">北海道</option>
+                  <option value="2">東北</option>
+                  <option value="3">関東</option>
+                  <option value="4">中部</option>
+                  <option value="5">近畿</option>
+                  <option value="6">中国・四国</option>
+                  <option value="7">九州</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="content">内容</label></td>
+              <td><textarea name="content" id="content" cols="50" rows="5"></textarea></td>
+            </tr>
+          </tboldy>
+        </table>
+        <button type="reset" id="reset">リセット</button>
+        <button type="submit" id="submit">送信する</button>
+      </form>
+    </section>
+    <footer>
+      <nav>
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="#"><li>Menu</li></a>
+          <a href="contact.html"><li>Contact</li></a>
+        </ul>
         <a href="index.html">
-          <li>Home</li>
+          <img src="images/sample_logo_w.png" alt="">
         </a>
-        <a href="#">
-          <li>Menu</li>
-        </a>
-        <a href="contact.html">
-          <li>Contact</li>
-        </a>
-      </ul>
-    </nav>
-    <a href="index.html">
-      <img src="images/sample_logo_w.png" alt="">
-    </a>
-    <span>&copy; DIVIC ALL RIGHTS RESERVED.</span>
-  </footer>
-</body>
+        <span>&copy; DIVIC Corp. All RIGHTS RESERVED.</span>
+      </nav>
+    </footer>
+  </body>
+
 </html>
