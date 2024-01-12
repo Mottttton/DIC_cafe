@@ -2,6 +2,16 @@ const priceElement = document.getElementById("product");
 const quantityElement = document.getElementById("number");
 let purchases = [];
 
+function add() {
+  const price = parseInt(priceElement.value);
+  const qty = parseInt(quantityElement.value);
+  const purchase = {
+    price: price,
+    quantity: qty,
+  };
+  purchases.push(purchase);
+}
+
 function calc() {
   let sum = 0;
   for(let i = 0; i < purchases.length; i++) {
@@ -11,14 +21,4 @@ function calc() {
   purchases = [];
   priceElement.value = "";
   quantityElement.value = "";
-}
-
-function add() {
-  const price = parseInt(priceElement.value);
-  const qty = parseInt(quantityElement.value);
-  const purchase = {
-    price: price,
-    quantity: qty,
-  };
-  purchases.push(purchase);
 }
