@@ -9,25 +9,39 @@ function add() {
     price: price,
     quantity: qty,
   };
-  purchases.push(purchase);
-  alert(display(purchases));
+  let isNewItem = true;
+
+  purchases.forEach((item) => {
+    if (item.price === purchase.price) {
+      isNewItem = false;
+    }
+  });
+
+  if (purchases.length < 1 || isNewItem) {
+    purchases.push(purchase);
+  } else {
+    for (let i = 0; i < purchases.length; i++) {
+      if (purchases[i].price === purchase.price) {
+        purchases[i].quantity += purchase.quantity;
+      }
+    }
+  }
+
+  alert(`${display()}\n小計${subtotal()}円`);
 }
 
-function display(cartItems) {
-  let string = "";
-  for (cartItem of cartItems) {
-    string += `${cartItem.price}円が${cartItem.quantity}点\n`;
-  }
-  string += "\n小計は" + subtotal(cartItems) + "円です";
-  return string;
+function display() {
+  return purchases
+    .map((purchase) => {
+      return `${purchase.price}円が${purchase.quantity}点`;
+    })
+    .join("\n");
 }
 
-function subtotal(cartItems) {
-  let currentSum = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    currentSum += cartItems[i].price * cartItems[i].quantity;
-  }
-  return currentSum;
+function subtotal() {
+  return purchases.reduce((prev, purchase) => {
+    return prev + purchase.price * purchase.quantity;
+  }, 0);
 }
 
 function calc() {
@@ -43,12 +57,12 @@ function calc() {
   quantityElement.value = "";
 }
 
-function calcPostageFromPurchase(purchasePrice){
+function calcPostageFromPurchase(purchasePrice) {
   if (purchasePrice >= 3000 || purchasePrice === 0) {
-    return postage = 0;
+    return (postage = 0);
   } else if (purchasePrice >= 2000) {
-    return postage = 250;
+    return (postage = 250);
   } else {
-    return postage = 500;
+    return (postage = 500);
   }
 }
