@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>DIC cafe</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/contact_validation.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   </head>
+
   <body>
+    <nav class="header_nav">
+      <div>
+        <button class="drop_menu_btn" id="drop_menu_btn">メニュー</button>
+        <ul class="drop_menu" id="drop_menu">
+          <a href="#" class="drop_menu_item">
+            <li>Home</li>
+          </a>
+          <a href="#" class="drop_menu_item">
+            <li>Menu</li>
+          </a>
+          <a href="#" class="drop_menu_item">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
     <section class="section_inner">
       <div class="section_title">
         <h1>CONTACT</h1>
@@ -19,11 +37,11 @@
             <td class="contact_input"><input type="text" name="name" id="name"></td>
           </tr>
           <tr class="contact_line">
-            <td class="contact_sign"><label for="email">Eメール</label></td>
+            <td class="contact_sign"><label for="name">Eメール</label></td>
             <td class="contact_input"><input type="email" name="email" id="email"></td>
           </tr>
           <tr class="contact_line">
-            <td class="contact_sign"><label for="email_confirm">Eメール(確認)</label></td>
+            <td class="contact_sign"><label for="name">Eメール(確認)</label></td>
             <td class="contact_input"><input type="email" name="email_confirm" id="email_confirm"></td>
           </tr>
           <tr class="contact_content">
@@ -37,6 +55,11 @@
         </div>
       </form>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+      </script>
+    <script type="text/javascript" src="javascripts/drop_menu.js"></script>
     <script type="text/javascript" src="javascripts/validation.js"></script>
   </body>
+
 </html>
