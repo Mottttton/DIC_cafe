@@ -109,3 +109,9 @@ body {
   padding: 20px;
   background: #d14539;
 }
+.alert_color {
+  color: #d14539;
+}
+.alert_textarea {
+  background-color: rgba(230, 169,171, .5);
+}
